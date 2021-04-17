@@ -8,7 +8,8 @@ on:
         required: true
         default: 'warning'
       tags:
-        description: 'Test scenario tags'  
+        description: 'Test scenario tags'
+        required: false
 
 jobs:
   printInputs:
@@ -17,3 +18,5 @@ jobs:
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
         echo "Tags: ${{ github.event.inputs.tags }}" 
+        echo "PR head ref: ${{ github.event.pull_request.head.ref }}" 
+        echo "PR Label: ${{ github.event.pull_request.labels.*.name }}" 
