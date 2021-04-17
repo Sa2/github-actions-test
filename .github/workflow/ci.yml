@@ -1,0 +1,9 @@
+name: "ci yml"
+
+on: [push]
+jobs:
+  workflow-ci:
+    runs-on: ubuntu-latest
+    steps: 
+      - users: actions/checkout@v2
+      - run: ./scripts/ci.sh
