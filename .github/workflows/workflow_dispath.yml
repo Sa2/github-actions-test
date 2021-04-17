@@ -18,5 +18,7 @@ jobs:
     - run: |
         echo "Log level: ${{ github.event.inputs.logLevel }}"
         echo "Tags: ${{ github.event.inputs.tags }}" 
+        echo "hash: ${{ github.sha }}" 
+        echo "ref: ${{ github.ref }}" 
         echo "PR head ref: ${{ github.event.pull_request.head.ref }}" 
         echo "PR Label: ${{ github.event.pull_request.labels.*.name }}" 
