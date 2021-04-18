@@ -10,6 +10,11 @@ on:
       tags:
         description: 'Test scenario tags'
         required: false
+      ifRun:
+        description: 'If run flow, input "run"'
+        required: true
+        default: ''
+
 
 jobs:
   printInputs:
