@@ -1,0 +1,23 @@
+name: "Deploy"
+
+on: 
+  workflow_dispatch:
+    inputs:
+      deployTask:
+        description: 'Deploy Task, all, visa-base2-web, clearing-batch, vss-batch'
+        required: true
+        default: 'all'
+      ifRun:
+        description: 'If run flow, input "run"'
+        required: true
+        default: ''
+
+
+jobs:
+  printInputs:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "Deploy tasks: ${{ github.event.inputs.deployTask }}"
+        echo "hash: ${{ github.sha }}"
+        echo "ref: ${{ github.ref }}"
