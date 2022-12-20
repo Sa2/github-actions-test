@@ -16,8 +16,11 @@ on:
 jobs:
   printInputs:
     runs-on: ubuntu-latest
+    env:
+      REPOSITORY_SECRETS_TEST: ${{ secrets.REPOSITORY_SECRETS_TEST }}
     steps:
     - run: |
         echo "Deploy tasks: ${{ github.event.inputs.deployTask }}"
         echo "hash: ${{ github.sha }}"
         echo "ref: ${{ github.ref }}"
+        echo "ref: $REPOSITORY_SECRETS_TEST"
