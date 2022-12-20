@@ -15,6 +15,5 @@ jobs:
       REPOSITORY_SECRETS_TEST: ${{ secrets.REPOSITORY_SECRETS_TEST }}
     steps: 
       - uses: actions/checkout@v2
-      - run: |
-        echo "ref: $REPOSITORY_SECRETS_TEST"
+      - run: echo $REPOSITORY_SECRETS_TEST
       - run: ./scripts/workflow_auto.sh
